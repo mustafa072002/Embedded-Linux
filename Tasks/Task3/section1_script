@@ -1,0 +1,22 @@
+if find /home/mustafa -iname .bashrc | grep -q .; then
+	echo "File Found.. Modifying bashrc"
+	if ! grep -q "^export HELLO=" ~/.bashrc; then
+
+		echo "export HELLO=$HOSTNAME" >> ~/.bashrc
+	else
+		echo "Env Variable Hello already in bashrc"
+	fi
+
+	if ! grep -q "^LOCAL=" ~/.bashrc; then
+
+		echo "LOCAL=$(whoami)" >> ~/.bashrc
+	else 
+		echo "LOCAL Already In bashrc"
+	fi
+	
+	#echo "gnome-terminal" >> ~/.bashrc
+	source ~/.bashrc
+
+else
+	echo "File Not Found"
+fi

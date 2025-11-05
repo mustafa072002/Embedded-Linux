@@ -1,0 +1,151 @@
+Q1)ls /usr/bin/ > /tmp/commands.list
+
+Q2) vim ~/.profile -> then add echo "date : $(date)"
+
+Q3) wc --> to count commands in usr bin first list them then count lines
+
+ls /usr/bin | wc -l (1476 command)
+
+Q4) 1) It only read the second file (why because this use pipelining which takes the output of the first file as input no file2 which won't use it) then it outputs the file2 only
+
+ 2) ls | rm file3 --> it will remove file 3 but won't show the files in the directory 
+
+ 3) ls /etc/passwd | wc –l --> it will count the lines of the output of ls which is one file
+
+Q5) find /* .profile
+
+Q6) 
+ls -i /
+     13 bin         14 lib         1179649 mnt   1441793 session2  3407873 usr
+4980737 boot        15 lib32        393217 opt   4718593 snap      6029313 var
+5505025 cdrom       16 lib64             1 proc  1048577 srv
+      1 dev         17 libx32       262145 root       12 swapfile
+4587521 etc         11 lost+found        1 run         1 sys
+3538945 home   4325377 media            18 sbin  5373953 tmp
+
+
+ls -i /etc
+4587528 acpi                           4587705 magic
+4587658 adduser.conf                   4587706 magic.mime
+4589525 adjtime                        4589585 mailcap
+4587529 alsa                           4587708 mailcap.order
+4587530 alternatives                   4587709 manpath.config
+4587659 anacrontab                     4587710 mime.types
+4587660 apg.conf                       4587711 mke2fs.conf
+4587531 apm                            4587523 ModemManager
+4587532 apparmor                       4587596 modprobe.d
+4587533 apparmor.d                     4587712 modules
+4587534 apport                         4587597 modules-load.d
+4587661 appstream.conf                 4587707 mtab
+4587535 apt                            4587714 nanorc
+4587536 avahi                          4587715 netconfig
+4587662 bash.bashrc                    4587598 netplan
+4587663 bash_completion                4587599 network
+4587537 bash_completion.d              4587600 networkd-dispatcher
+4587664 bindresvport.blacklist         4587524 NetworkManager
+4587538 binfmt.d                       4587716 networks
+4587539 bluetooth                      4587601 newt
+4587665 brlapi.key                     4587717 nftables.conf
+4587540 brltty                         4587551 nsswitch.conf
+4587666 brltty.conf                    4589557 openal
+4587541 ca-certificates                4587602 openvpn
+4587586 ca-certificates.conf           4587603 opt
+4587667 ca-certificates.conf.dpkg-old  4588881 os-release
+4587542 chatscripts                    4587525 PackageKit
+4587544 console-setup                  4587720 pam.conf
+4587545 cracklib                       4587604 pam.d
+4587546 cron.d                         4587721 papersize
+4587547 cron.daily                     4587735 passwd
+4587548 cron.hourly                    4590501 passwd-
+4587549 cron.monthly                   4587605 pcmcia
+4587669 crontab                        4587606 perl
+4587550 cron.weekly                    4587607 pki
+4587552 cups                           4587608 pm
+4587553 cupshelpers                    4587723 pnm2ppa.conf
+4587554 dbus-1                         4587609 polkit-1
+4587555 dconf                          4587610 ppp
+4587670 debconf.conf                   4587690 printcap
+4587671 debian_version                 4587724 profile
+4587556 default                        4587611 profile.d
+4587672 deluser.conf                   4587725 protocols
+4587557 depmod.d                       4587612 pulse
+4587558 dhcp                           4587613 python3
+4587559 dictionaries-common            4587614 python3.10
+4587560 dpkg                           4587615 rc0.d
+4587673 e2scrub.conf                   4587616 rc1.d
+4587561 emacs                          4587617 rc2.d
+4587674 environment                    4587618 rc3.d
+4587562 environment.d                  4587619 rc4.d
+4587675 ethertypes                     4587620 rc5.d
+4587563 firefox                        4587621 rc6.d
+4587564 fonts                          4587622 rcS.d
+4587676 fprintd.conf                   4587726 resolv.conf
+4587522 fstab                          4587727 rmt
+4587677 fuse.conf                      4587728 rpc
+4587565 fwupd                          4587729 rsyslog.conf
+4587678 gai.conf                       4587624 rsyslog.d
+4587566 gdb                            4587730 rygel.conf
+4587567 gdm3                           4587625 sane.d
+4587568 geoclue                        4587626 security
+4587569 ghostscript                    4587627 selinux
+4587570 glvnd                          4587731 sensors3.conf
+4587571 gnome                          4587628 sensors.d
+4587572 groff                          4587732 services
+4590505 group                          4587629 sgml
+4587680 group-                         4587884 shadow
+4587573 grub.d                         4587722 shadow-
+4588218 gshadow                        4587734 shells
+4590502 gshadow-                       4587630 skel
+4587574 gss                            4587631 snmp
+4587575 gtk-2.0                        4587632 speech-dispatcher
+4587576 gtk-3.0                        4587633 ssh
+4587681 hdparm.conf                    4587634 ssl
+4587682 host.conf                      4590512 subgid
+4587683 hostid                         4587736 subgid-
+4587684 hostname                       4590511 subuid
+4587685 hosts                          4590506 subuid-
+4587686 hosts.allow                    4587737 sudo.conf
+4587687 hosts.deny                     4587739 sudoers
+4587577 hp                             4587636 sudoers.d
+4587578 ifplugd                        4587738 sudo_logsrvd.conf
+4587579 init                           4587740 sysctl.conf
+4587580 init.d                         4587637 sysctl.d
+4587581 initramfs-tools                4587638 systemd
+4587688 inputrc                        4587639 terminfo
+4587582 insserv.conf.d                 4587640 thermald
+4587583 ipp-usb                        4587641 thunderbird
+4587584 iproute2                       4587741 timezone
+4588235 issue                          4587642 tmpfiles.d
+4588736 issue.net                      4589580 ts.conf
+4587585 kernel                         4587643 ubuntu-advantage
+4588851 kernel-img.conf                4587742 ucf.conf
+4587692 kerneloops.conf                4587644 udev
+4587588 ldap                           4587645 udisks2
+4589962 ld.so.cache                    4587646 ufw
+4587694 ld.so.conf                     4587647 update-manager
+4587587 ld.so.conf.d                   4587648 update-motd.d
+4587695 legal                          4587649 update-notifier
+4587696 libao.conf                     4587526 UPower
+4587697 libaudit.conf                  4587743 usb_modeswitch.conf
+4587589 libblockdev                    4587650 usb_modeswitch.d
+4587590 libnl-3                        4589555 vdpau_wrapper.cfg
+4587591 libpaper.d                     4587651 vim
+4587592 libreoffice                    4587744 vtrgb
+4587698 locale.alias                   4587652 vulkan
+4587623 locale.gen                     4587745 wgetrc
+4589274 localtime                      4587653 wpa_supplicant
+4587593 logcheck                       4587527 X11
+4587701 login.defs                     4587746 xattr.conf
+4587702 logrotate.conf                 4587654 xdg
+4587594 logrotate.d                    4587655 xml
+4588795 lsb-release                    4587747 zsh_command_not_found
+4587704 machine-id
+
+ls -i /etc/hosts
+4587685 /etc/hosts
+
+Q7)ln -s /ets/passwd /boot/softlink 
+
+Q8) ln /etc/passwd /boot/hardlink (it will be created normally but in /boot/efi it won't because of cross partition)
+
+Q9)Continue the command in the next line 
